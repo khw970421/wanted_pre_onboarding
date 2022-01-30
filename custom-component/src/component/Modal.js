@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 
 const Modal = ({
-  width = 100,
-  height = 50,
+  width = 20,
+  height = 10,
   btnText = "Open Modal",
   modalContent = "Hello CodeStates",
 }) => {
@@ -37,9 +37,9 @@ const Modal = ({
 
 const ModalBtn = styled.button`
   background: purple;
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
-  border-radius: ${({ height }) => height}px;
+  width: ${({ width }) => width}vh;
+  height: ${({ height }) => height}vh;
+  border-radius: ${({ height }) => height}vh;
   color: white;
   border: 0px;
   cursor: pointer;
@@ -52,7 +52,6 @@ const ModalContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
 `;
 
 const ModalDiv = styled.div`
@@ -68,8 +67,7 @@ const ModalDiv = styled.div`
   align-items: center;
   justify-content: center;
   color: purple;
-  flex-direction: column;
-  padding : 1%;
+  padding: 1%;
 `;
 
 const ContentDiv = styled.div`
