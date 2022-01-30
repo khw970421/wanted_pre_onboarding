@@ -5,9 +5,16 @@ const ClickToEdit = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
+  const checkAge = (val) => Number.isInteger(Number(val)) && Number(val) > 0;
+
   const blurEvent = ({ target }) => {
     if (target.className.includes("nameInput")) setName(target.value);
-    if (target.className.includes("ageInput")) setAge(target.value);
+    if (target.className.includes("ageInput") && checkAge(target.value))
+      setAge(target.value);
+    else {
+      target.value = "";
+      alert("자연수인 숫자를 입력해주세요");
+    }
   };
   return (
     <EditContainer>
