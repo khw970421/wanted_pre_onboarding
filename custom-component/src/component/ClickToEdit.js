@@ -8,7 +8,10 @@ const ClickToEdit = () => {
   const checkAge = (val) => Number.isInteger(Number(val)) && Number(val) > 0;
 
   const blurEvent = ({ target }) => {
-    if (target.className.includes("nameInput")) setName(target.value);
+    if (target.className.includes("nameInput")) {
+      setName(target.value);
+      return;
+    }
     if (target.className.includes("ageInput") && checkAge(target.value))
       setAge(target.value);
     else {
