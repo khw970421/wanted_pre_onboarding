@@ -11,12 +11,7 @@ const exampleArr = [
   "blueberry",
 ];
 
-const InputContainer = styled.div``;
-
-const EraseBtn = styled.button``;
-const Input = styled.input``;
-
-const AutoComplete = () => {
+const AutoComplete = ({ width = 30, height = 10 }) => {
   const [searchIncludeArr, setSearchIncludeArr] = useState([]);
   const [isSearchValueOpen, setIsSearchValueOpen] = useState(false);
 
@@ -38,7 +33,9 @@ const AutoComplete = () => {
     const $Input = document.querySelector(".inputSearch");
     $Input.value = target.innerText;
     setSearchIncludeArr([]);
+    setIsSearchValueOpen(false);
   };
+  console.log(isSearchValueOpen);
   return (
     <InputContainer>
       <Input
@@ -46,17 +43,58 @@ const AutoComplete = () => {
         onChange={changeInput}
         autocomplete="off"
         className="inputSearch"
+        width={width}
+        height={height}
+        searchOpen={isSearchValueOpen}
       />
-      <ul className="item-ul">
-        {isSearchValueOpen &&
-          searchIncludeArr.map((val, idx) => (
-            <li onClick={clickSearchValue} id={idx}>
+      {isSearchValueOpen && (
+        <SearchUl
+          className="item-ul"
+          width={width}
+          height={height}
+          length={searchIncludeArr.length}
+        >
+          {searchIncludeArr.map((val, idx) => (
+            <SearchLi onClick={clickSearchValue} id={idx} height={height}>
               {val}
-            </li>
+            </SearchLi>
           ))}
-      </ul>
+        </SearchUl>
+      )}
     </InputContainer>
   );
 };
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const EraseBtn = styled.button``;
+const Input = styled.input`
+  width: ${({ width }) => width}vw;
+  height: ${({ height }) => height}vh;
+  padding: 1vh 1vw;
+  border-radius: 10px;
+  border: 1px solid gray;
+`;
+const SearchUl = styled.ul`
+  padding: 0px;
+  margin: 0px;
+  width: ${({ width }) => width}vw;
+  height: calc(${({ length }) => length} * ${({ height }) => height}vh);
+  border: 1px solid gray;
+  box-shadow: 0px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+`;
+
+const SearchLi = styled.li`
+  padding: 1vh 1vw;
+  box-sizing: border-box;
+  list-style: none;
+  text-align: left;
+  height: ${({ height }) => height}vh;
+`;
 
 export default AutoComplete;
