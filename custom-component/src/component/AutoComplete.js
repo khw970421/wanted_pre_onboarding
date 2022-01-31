@@ -29,7 +29,8 @@ const AutoComplete = ({
     if (value !== "") {
       const retArr = retSearchIncludeArr(value);
       setSearchIncludeArr(retArr);
-      setIsSearchValueOpen(true);
+      if (retArr.length !== 0) setIsSearchValueOpen(true);
+      else setIsSearchValueOpen(false);
     } else {
       setIsSearchValueOpen(false);
     }
@@ -41,7 +42,6 @@ const AutoComplete = ({
     setSearchIncludeArr([]);
     setIsSearchValueOpen(false);
   };
-  console.log(isSearchValueOpen);
   return (
     <InputContainer>
       <Input
@@ -61,7 +61,7 @@ const AutoComplete = ({
           length={searchIncludeArr.length}
         >
           {searchIncludeArr.map((val, idx) => (
-            <SearchLi onClick={clickSearchValue} id={idx} height={height}>
+            <SearchLi onClick={clickSearchValue} key={idx} height={height}>
               {val}
             </SearchLi>
           ))}
