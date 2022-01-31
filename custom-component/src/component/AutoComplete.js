@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 
+//TODO : 정확히는 AUTOCOMPLETE 부분이 아래 컨텐츠가 있어도 위에 떠있게 구현해야한다.
+
 const exampleArr = [
   "apple",
   "banana",
@@ -11,12 +13,16 @@ const exampleArr = [
   "blueberry",
 ];
 
-const AutoComplete = ({ width = 30, height = 10 }) => {
+const AutoComplete = ({
+  width = 30,
+  height = 10,
+  autocompleteData = exampleArr,
+}) => {
   const [searchIncludeArr, setSearchIncludeArr] = useState([]);
   const [isSearchValueOpen, setIsSearchValueOpen] = useState(false);
 
   const retSearchIncludeArr = (value) =>
-    exampleArr.filter((saveValue) => saveValue.indexOf(value) >= 0);
+    autocompleteData.filter((saveValue) => saveValue.indexOf(value) >= 0);
 
   const changeInput = ({ target }) => {
     const value = target.value;
