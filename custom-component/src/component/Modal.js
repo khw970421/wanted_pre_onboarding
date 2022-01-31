@@ -78,9 +78,7 @@ const ContentDiv = styled.div`
   overflow: hidden;
   vertical-align: top;
   text-overflow: ellipsis;
-  word-break: break-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+
 `;
 
 const ModalOutDiv = styled.div`
