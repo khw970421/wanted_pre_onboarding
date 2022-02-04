@@ -1,6 +1,23 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-const exampleTabArr = ["Tab1", "Tab2", "Tab3", "Tab4"];
+const exampleTabArr = [
+  {
+    tagName: "Tab1",
+    text: "ONE",
+  },
+  {
+    tagName: "Tab2",
+    text: "TWO",
+  },
+  {
+    tagName: "Tab1",
+    text: "THREE",
+  },
+  {
+    tagName: "Tab1",
+    text: "FOUR",
+  },
+];
 
 const Tab = ({ width = 40, height = 10, tabArr = exampleTabArr }) => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -11,7 +28,7 @@ const Tab = ({ width = 40, height = 10, tabArr = exampleTabArr }) => {
     <MenuContainer>
       <MenuTable>
         {tabArr &&
-          tabArr.map((tab, id) => (
+          tabArr.map(({ tagName }, id) => (
             <MenuItem
               onClick={clickMenuTab}
               id={id}
@@ -20,12 +37,12 @@ const Tab = ({ width = 40, height = 10, tabArr = exampleTabArr }) => {
               tabArr={tabArr}
               selectedId={selectedTab}
             >
-              {tab}
+              {tagName}
             </MenuItem>
           ))}
       </MenuTable>
       <MenuResult width={width} height={height}>
-        Tab menu {tabArr[selectedTab]}
+        Tab menu {tabArr[selectedTab].text}
       </MenuResult>
     </MenuContainer>
   );
