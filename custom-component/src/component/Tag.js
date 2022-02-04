@@ -1,19 +1,27 @@
 import styled from "@emotion/styled";
 import { useState, useRef } from "react";
 const TagContainer = styled.div`
-  display: inline-block;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   min-width: 300px;
   max-width: 500px;
   border: 1px solid gray;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  padding: 10px;
 `;
 const TagElementContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   background-color: purple;
   color: white;
   border-radius: 1%;
-  display: inline-block;
   padding: 10px;
-  position: relative;
   margin: 5px;
   border-radius: 5px;
 `;
@@ -35,9 +43,10 @@ const TagEraseBtn = styled.button`
 const TagInput = styled.input`
   border: 0px;
   outline: none;
+  vertical-align: middle;
 `;
 
-const Tag = () => {
+const Tag = ({ width = 500, height = 50 }) => {
   const [tagArr, setTagArr] = useState([]);
   const nameInput = useRef();
   const changeInputEvent = ({ key, target }) => {
@@ -47,16 +56,16 @@ const Tag = () => {
       nameInput.current.focus();
     }
   };
-
+  const ContentDiv = styled.div``;
   const eraseTagElement = ({ target }) => {
     const { id } = target.parentNode;
     setTagArr(tagArr.filter((_, idx) => Number(id) !== idx));
   };
   return (
-    <TagContainer>
+    <TagContainer width={width} height={height}>
       {tagArr.map((val, idx) => (
         <TagElementContainer id={idx} key={idx}>
-          {val}
+          <ContentDiv> {val}</ContentDiv>
           <TagEraseBtn onClick={eraseTagElement}>X</TagEraseBtn>
         </TagElementContainer>
       ))}
