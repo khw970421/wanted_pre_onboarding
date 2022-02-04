@@ -73,6 +73,8 @@ const MenuItem = styled.div`
 `;
 
 const MenuResult = styled.div`
+  text-align: center;
+  line-height: ${({ height }) => height}vh;
   width: ${({ width }) => width}vw;
   height: ${({ height }) => height}vh;
 `;

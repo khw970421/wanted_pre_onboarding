@@ -33,7 +33,11 @@ const ClickToEdit = () => {
     </EditContainer>
   );
 };
-const EditContainer = styled.div``;
+const EditContainer = styled.div`
+  display :flex;
+  align-items:center;
+  flex-direction:column;
+`;
 const NameContainer = styled.div`
   padding: 1vh 1vw;
 `;

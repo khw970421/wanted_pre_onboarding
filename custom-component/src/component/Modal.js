@@ -13,27 +13,35 @@ const Modal = ({
   };
 
   const checkModalOut = ({ target }) => {
-    if (target.className.includes("modalContainer")) ModalEvent();
+    if (target.className.includes("modalOpenContainer")) ModalEvent();
   };
 
   return (
-    <div>
+    <ModalContainer>
       {isModalOpen ? (
-        <ModalContainer onClick={checkModalOut} className="modalContainer">
+        <ModalOpenContainer
+          onClick={checkModalOut}
+          className="modalOpenContainer"
+        >
           <ModalDiv>
             <ModalOutDiv onClick={ModalEvent}>x</ModalOutDiv>
             <ContentDiv> {modalContent}</ContentDiv>
           </ModalDiv>
-        </ModalContainer>
+        </ModalOpenContainer>
       ) : (
         <></>
       )}
       <ModalBtn width={width} height={height} onClick={ModalEvent}>
         {btnText}
       </ModalBtn>
-    </div>
+    </ModalContainer>
   );
 };
+
+const ModalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const ModalBtn = styled.button`
   background: purple;
@@ -45,7 +53,7 @@ const ModalBtn = styled.button`
   cursor: pointer;
 `;
 
-const ModalContainer = styled.div`
+const ModalOpenContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -78,7 +86,6 @@ const ContentDiv = styled.div`
   overflow: hidden;
   vertical-align: top;
   text-overflow: ellipsis;
-
 `;
 
 const ModalOutDiv = styled.div`
