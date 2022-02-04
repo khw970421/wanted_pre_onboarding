@@ -45,6 +45,10 @@ const TagInput = styled.input`
   outline: none;
   vertical-align: middle;
 `;
+const ContentDiv = styled.div`
+  white-space: no-wrap;
+  block: inline-block;
+`;
 
 const Tag = ({ width = 500, height = 50 }) => {
   const [tagArr, setTagArr] = useState([]);
@@ -56,7 +60,7 @@ const Tag = ({ width = 500, height = 50 }) => {
       nameInput.current.focus();
     }
   };
-  const ContentDiv = styled.div``;
+
   const eraseTagElement = ({ target }) => {
     const { id } = target.parentNode;
     setTagArr(tagArr.filter((_, idx) => Number(id) !== idx));
