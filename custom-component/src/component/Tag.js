@@ -8,7 +8,7 @@ const TagContainer = styled.div`
   height: ${({ height }) => height}px;
   min-width: 300px;
   max-width: 500px;
-  border: 1px solid gray;
+  border:${({inputFocus})=>inputFocus ? "1.5px solid black" : "1px solid gray"} ;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
@@ -52,6 +52,7 @@ const ContentDiv = styled.div`
 
 const Tag = ({ width = 500, height = 50 }) => {
   const [tagArr, setTagArr] = useState([]);
+  const [inputFocus, setInputFocus] = useState(false);
   const nameInput = useRef();
   const changeInputEvent = ({ key, target }) => {
     if (key === "Enter") {
@@ -65,8 +66,12 @@ const Tag = ({ width = 500, height = 50 }) => {
     const { id } = target.parentNode;
     setTagArr(tagArr.filter((_, idx) => Number(id) !== idx));
   };
+
+  const focusInput = () => {
+    setInputFocus(!inputFocus);
+  };
   return (
-    <TagContainer width={width} height={height}>
+    <TagContainer width={width} height={height} inputFocus={inputFocus}>
       {tagArr.map((val, idx) => (
         <TagElementContainer id={idx} key={idx}>
           <ContentDiv> {val}</ContentDiv>
@@ -78,6 +83,8 @@ const Tag = ({ width = 500, height = 50 }) => {
         placeholder="Press enter to add tags"
         onKeyUp={changeInputEvent}
         ref={nameInput}
+        onFocus={focusInput}
+        onBlur={focusInput}
       />
     </TagContainer>
   );
