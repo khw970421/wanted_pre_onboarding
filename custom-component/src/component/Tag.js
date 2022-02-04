@@ -59,7 +59,6 @@ const TagContainer = styled.div`
 `;
 const TagElementContainer = styled.div`
   display: flex;
-  flex-direction: row;
   background-color: purple;
   color: white;
   border-radius: 1%;
@@ -75,9 +74,6 @@ const TagEraseBtn = styled.button`
   margin-left: 5px;
   padding: 6px;
   text-align: center;
-  line-height: 15px;
-  position: relative;
-  top: 90%;
   width: 25px;
   height: 25px;
 `;
@@ -85,11 +81,7 @@ const TagEraseBtn = styled.button`
 const TagInput = styled.input`
   border: 0px;
   outline: none;
-  vertical-align: middle;
 `;
-const ContentDiv = styled.div`
-  white-space: no-wrap;
-  block: inline-block;
-`;
+const ContentDiv = styled.div``;
 
 export default Tag;
