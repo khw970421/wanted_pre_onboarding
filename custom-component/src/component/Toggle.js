@@ -1,8 +1,29 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 
+const Toggle = ({ width = 50, height = 30, disabled }) => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+  return (
+    <ToggleContainer>
+      <ToggleInput
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={handleChange}
+        height={height}
+      />
+      <ToggleSwitch width={width} height={height} />
+      Toggle Switch {checked ? "On" : "Off"}
+    </ToggleContainer>
+  );
+};
 const ToggleContainer = styled.label`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
   user-select: none;
 `;
@@ -39,24 +60,4 @@ const ToggleInput = styled.input`
     left: calc(100% - ${(props) => props.height - 8}px);
   }
 `;
-
-const Toggle = ({ width = 50, height = 30, disabled }) => {
-  const [checked, setChecked] = useState(false);
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-  return (
-    <ToggleContainer>
-      <ToggleInput
-        type="checkbox"
-        checked={checked}
-        disabled={disabled}
-        onChange={handleChange}
-        height={height}
-      />
-      <ToggleSwitch width={width} height={height} />
-    </ToggleContainer>
-  );
-};
-
 export default Toggle;
