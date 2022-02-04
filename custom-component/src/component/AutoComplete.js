@@ -101,6 +101,7 @@ const SearchLi = styled.li`
   list-style: none;
   text-align: left;
   height: ${({ height }) => height}vh;
+  line-height: ${({ height }) => height - 2}vh;
 `;
 
 export default AutoComplete;
