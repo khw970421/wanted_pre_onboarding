@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useState, useRef } from "react";
 
-const Tag = ({ width = 500, height = 50 }) => {
+const Tag = ({ width = 500, height = 30 }) => {
   const [tagArr, setTagArr] = useState([]);
   const [inputFocus, setInputFocus] = useState(false);
   const nameInput = useRef();

@@ -15,7 +15,7 @@ const exampleArr = [
 
 const AutoComplete = ({
   width = 30,
-  height = 10,
+  height = 5,
   autocompleteData = exampleArr,
 }) => {
   const [searchIncludeArr, setSearchIncludeArr] = useState([]);

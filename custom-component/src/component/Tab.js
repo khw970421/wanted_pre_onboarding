@@ -19,7 +19,7 @@ const exampleTabArr = [
   },
 ];
 
-const Tab = ({ width = 40, height = 10, tabArr = exampleTabArr }) => {
+const Tab = ({ width = 40, height = 5, tabArr = exampleTabArr }) => {
   const [selectedTab, setSelectedTab] = useState(0);
   const clickMenuTab = ({ target }) => {
     setSelectedTab(Number(target.id));

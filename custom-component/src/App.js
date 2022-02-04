@@ -24,6 +24,7 @@ const ComponentContainerStyle = styled.div`
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
+  height : 400px;
 `;
 
 const ComponentContainer = ({ text }) => {
