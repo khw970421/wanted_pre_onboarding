@@ -22,26 +22,33 @@ const Tag = ({ width = 500, height = 50 }) => {
     setInputFocus(!inputFocus);
   };
   return (
-    <TagContainer width={width} height={height} inputFocus={inputFocus}>
-      {tagArr.map((val, idx) => (
-        <TagElementContainer id={idx} key={idx}>
-          <ContentDiv> {val}</ContentDiv>
-          <TagEraseBtn onClick={eraseTagElement}>X</TagEraseBtn>
-        </TagElementContainer>
-      ))}
+    <TagContainer>
+      <TagSubContainer width={width} height={height} inputFocus={inputFocus}>
+        {tagArr.map((val, idx) => (
+          <TagElementContainer id={idx} key={idx}>
+            <ContentDiv> {val}</ContentDiv>
+            <TagEraseBtn onClick={eraseTagElement}>X</TagEraseBtn>
+          </TagElementContainer>
+        ))}
 
-      <TagInput
-        placeholder="Press enter to add tags"
-        onKeyUp={changeInputEvent}
-        ref={nameInput}
-        onFocus={focusInput}
-        onBlur={focusInput}
-      />
+        <TagInput
+          placeholder="Press enter to add tags"
+          onKeyUp={changeInputEvent}
+          ref={nameInput}
+          onFocus={focusInput}
+          onBlur={focusInput}
+        />
+      </TagSubContainer>
     </TagContainer>
   );
 };
 
 const TagContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const TagSubContainer = styled.div`
   display: flex;
   align-items: center;
   border-radius: 10px;
