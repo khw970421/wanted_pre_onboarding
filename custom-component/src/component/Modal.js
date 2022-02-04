@@ -47,6 +47,8 @@ const ModalBtn = styled.button`
   background: purple;
   width: ${({ width }) => width}vh;
   height: ${({ height }) => height}vh;
+  min-height : 50px;
+  min-width : 100px;
   border-radius: ${({ height }) => height}vh;
   color: white;
   border: 0px;
