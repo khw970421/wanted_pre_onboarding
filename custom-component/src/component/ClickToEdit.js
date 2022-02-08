@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 
-const ClickToEdit = ({width=90,height=30}) => {
+const ClickToEdit = ({ width = 90, height = 30 }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
@@ -48,12 +48,14 @@ const AgeContainer = styled.div`
 `;
 
 const NameInput = styled.input`
+  text-align: center;
   :focus {
     outline: none;
     box-shadow: 0 0 2px 2px skyblue;
   }
 `;
 const AgeInput = styled.input`
+  text-align: center;
   :focus {
     outline: none;
     box-shadow: 0 0 2px 2px skyblue;
