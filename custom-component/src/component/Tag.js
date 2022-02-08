@@ -58,11 +58,8 @@ const TagSubContainer = styled.div`
   max-width: 500px;
   border: ${({ inputFocus }) =>
     inputFocus ? "1.5px solid black" : "1px solid gray"};
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-  }
   padding: 10px;
+  overflow: hidden;
 `;
 const TagElementContainer = styled.div`
   display: flex;
@@ -89,6 +86,8 @@ const TagInput = styled.input`
   border: 0px;
   outline: none;
 `;
-const ContentDiv = styled.div``;
+const ContentDiv = styled.div`
+  white-space: nowrap;
+`;
 
 export default Tag;
