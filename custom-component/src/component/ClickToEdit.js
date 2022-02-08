@@ -48,12 +48,14 @@ const AgeContainer = styled.div`
 `;
 
 const NameInput = styled.input`
+  text-align:center;
   :focus {
     outline: none;
     box-shadow: 0 0 2px 2px skyblue;
   }
 `;
 const AgeInput = styled.input`
+text-align:center;
   :focus {
     outline: none;
     box-shadow: 0 0 2px 2px skyblue;
