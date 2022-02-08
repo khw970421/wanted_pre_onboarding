@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 
-const ClickToEdit = () => {
+const ClickToEdit = ({width=90,height=30}) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
@@ -20,7 +20,7 @@ const ClickToEdit = () => {
     }
   };
   return (
-    <EditContainer>
+    <EditContainer width={width} height={height}>
       <NameContainer>
         이름 : <NameInput onBlur={blurEvent} className="nameInput" />
       </NameContainer>
@@ -34,9 +34,11 @@ const ClickToEdit = () => {
   );
 };
 const EditContainer = styled.div`
-  display :flex;
-  align-items:center;
-  flex-direction:column;
+  width: ${({ width }) => width}vw;
+  height: ${({ height }) => height}vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 const NameContainer = styled.div`
   padding: 1vh 1vw;
