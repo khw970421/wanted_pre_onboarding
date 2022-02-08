@@ -3,15 +3,7 @@ import { useState } from "react";
 
 //TODO : 정확히는 AUTOCOMPLETE 부분이 아래 컨텐츠가 있어도 위에 떠있게 구현해야한다.
 
-const exampleArr = [
-  "apple",
-  "banana",
-  "watermelon",
-  "lemon",
-  "cherry",
-  "pineapple",
-  "blueberry",
-];
+const exampleArr = ["antique", "vintage", "중고 A급", "rustic", "refurbished"];
 
 const AutoComplete = ({
   width = 30,
@@ -22,7 +14,9 @@ const AutoComplete = ({
   const [isSearchValueOpen, setIsSearchValueOpen] = useState(false);
 
   const retSearchIncludeArr = (value) =>
-    autocompleteData.filter((saveValue) => saveValue.indexOf(value) >= 0);
+    autocompleteData.filter(
+      (saveValue) => saveValue.toLowerCase().indexOf(value) >= 0
+    );
 
   const changeInput = ({ target }) => {
     const value = target.value;

@@ -28,7 +28,7 @@ const ClickToEdit = ({width=90,height=30}) => {
         나이 : <AgeInput onBlur={blurEvent} className="ageInput" />
       </AgeContainer>
       <ResultInformation>
-        이름 {name} age {age}
+        이름 {name} 나이 {age}
       </ResultInformation>
     </EditContainer>
   );

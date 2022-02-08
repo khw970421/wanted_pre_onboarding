@@ -12,11 +12,7 @@ const exampleTabArr = [
   {
     tagName: "Tab3",
     text: "THREE",
-  },
-  {
-    tagName: "Tab4",
-    text: "FOUR",
-  },
+  }
 ];
 
 const Tab = ({ width = 40, height = 5, tabArr = exampleTabArr }) => {
