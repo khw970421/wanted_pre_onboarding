@@ -10,11 +10,11 @@ const exampleTabArr = [
     text: "TWO",
   },
   {
-    tagName: "Tab1",
+    tagName: "Tab3",
     text: "THREE",
   },
   {
-    tagName: "Tab1",
+    tagName: "Tab4",
     text: "FOUR",
   },
 ];
