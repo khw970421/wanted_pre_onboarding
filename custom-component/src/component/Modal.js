@@ -47,8 +47,8 @@ const ModalBtn = styled.button`
   background: purple;
   width: ${({ width }) => width}vh;
   height: ${({ height }) => height}vh;
-  min-height : 50px;
-  min-width : 100px;
+  min-height: 50px;
+  min-width: 100px;
   border-radius: ${({ height }) => height}vh;
   color: white;
   border: 0px;
@@ -82,11 +82,9 @@ const ModalDiv = styled.div`
 
 const ContentDiv = styled.div`
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: box;
-  margin-top: 1px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   overflow: hidden;
-  vertical-align: top;
   text-overflow: ellipsis;
 `;
 
