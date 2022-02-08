@@ -14,6 +14,12 @@
 
 ## 실행방법
 
+
+
+https://user-images.githubusercontent.com/59253551/153022024-24f7bc79-edc7-4f2e-8d39-4145396303dd.mp4
+
+
+
 #   Modal.js
 ## 구현한 방법 및 이유
 1. 매개변수
@@ -32,6 +38,12 @@
 
 ## 실행방법
 
+
+https://user-images.githubusercontent.com/59253551/153022044-12b8fa85-b51d-4288-a8ce-9acea3e342ce.mp4
+
+
+
+
 #   Tab.js
 ## 구현한 방법 및 이유
 1. 매개변수
@@ -47,6 +59,12 @@
 ['Tab1','Tab2','Tab3'] 배열과 ['ONE','TWO','THREE'] 배열을 각각 받는 방법은 더욱 안 좋은 코드인 것인가 고민을 하게 되었다.
 
 ## 실행방법
+
+
+
+https://user-images.githubusercontent.com/59253551/153022092-a87dd00e-7bd1-43b8-add6-230d68c4039a.mp4
+
+
 
 #   Tag.js
 ## 구현한 방법 및 이유
@@ -69,6 +87,13 @@
 
 ## 실행방법
 
+
+https://user-images.githubusercontent.com/59253551/153022124-b21ea821-1efe-45f1-89e8-6a06e2542bca.mp4
+
+
+
+
+
 #  AutoComplete.js
 ## 구현한 방법 및 이유
 1. 매개변수
@@ -84,6 +109,12 @@
 
 ## 실행방법
 
+
+
+https://user-images.githubusercontent.com/59253551/153022152-28115eb9-311f-480b-9e18-161c08980c04.mp4
+
+
+
 #   ClickToEdit.js
 ## 구현한 방법 및 이유
 
@@ -97,3 +128,9 @@
 * 어려웠다기보다 notion 예시에서는 refurbished를 눌러도 아래에 refurbished가 검색 결과로 남아있는데 이미 검색했으면 굳이 아래에는 검색 결과로 남아 있는 것은 필요 없다 판단되어 검색해서 추가시 해당 검색내용은 아래에서 없어지게 했다.
 
 ## 실행방법
+
+
+https://user-images.githubusercontent.com/59253551/153022163-85ff4996-4168-46fc-9496-870be961c2b3.mp4
+
+
+
