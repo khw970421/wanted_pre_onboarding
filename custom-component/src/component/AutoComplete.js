@@ -99,3 +99,6 @@ const SearchLi = styled.li`
 `;
 
 export default AutoComplete;
+
+// input을 동그랗게 만들고 추후 아래에 검색값이 있는지 확인이되면 ` border-radius: 1rem 1rem 0 0;`으로 부여하면 Input 위쪽만 둥글고 아래는 네모여서 
+// 전체가 둥글게 보일수있을거라 판단된다. 이에 따라 `ul` 태그의 border또한 전부 10px radius가 아닌 위쪽은 네모고 아래만 둥글게 해야 input부터 검색까지를 둘러싼 원을 만들 수 있다. 
